@@ -1,0 +1,82 @@
+/*
+ * Modified version of Snackbar from W3Schools
+ * https://www.w3schools.com/howto/howto_js_snackbar.asp
+ */
+
+#toast {
+  visibility: hidden; 
+  font-size: x-large;
+  max-width: 30vw;
+  background-color: #333; 
+  color: #fff; 
+  text-align: center; 
+  border-radius: 2px; 
+  padding: 16px;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  right:  0;
+  margin: auto;
+  bottom: 30px;
+}
+
+#toast-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+/*
+ * The animation times correspond to toastMessageDuration in constants.js
+ */
+#toast.show {
+  visibility: visible;
+  -o-animation: fadein 0.5s, fadeout 0.5s 4.0s;
+  -moz-animation: fadein 0.5s, fadeout 0.5s 4.0s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.0s;
+  animation: fadein 0.5s, fadeout 0.5s 4.0s;
+}
+
+/* Fade in for various browsers */
+@-o-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-moz-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/* Fade out for various browsers */
+@-o-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@-moz-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+} 

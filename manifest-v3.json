@@ -1,0 +1,39 @@
+{
+	"manifest_version": 3,
+	"name": "Calendar Wizard",
+	"version": "1.4",
+	"description": "Save enrollments to Google Calendar or download as a .ical file.",
+	"icons": {
+		"48": "icons/calendar-icon-48.png",
+		"96": "icons/calendar-icon-96.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://members.hoofers.org/*",
+				"https://members.hoofermountaineering.org/*",
+		    	"https://events.hooferouting.org/*",
+				"https://events.hooferscuba.org/*",
+				"https://events.hoofersns.org/*",
+				"https://lessons.hoofersailing.org/*"
+			],
+			"js": [
+                "build/content.min.js"
+            ],
+            "css": [
+                "build/style.css"
+            ]
+		}
+	],
+    "permissions": [
+            "contextMenus",
+            "tabs",
+            "identity",
+            "storage",
+            "webNavigation"
+    ],
+    "background": {
+        "service_worker": "build/background.min.js"
+    }
+}
+
